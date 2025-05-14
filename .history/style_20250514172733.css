@@ -13,7 +13,7 @@
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
 }
 header {
   padding: 32px 120px;
@@ -35,7 +35,7 @@ header {
   }
 }
 
-#searchBar {
+#search-bar {
   border-radius: 24px;
   width: 420px;
   height: 40px;
@@ -50,7 +50,7 @@ main {
   padding: 50px 120px;
 }
 
-#head {
+#title {
   display: flex;
   justify-content: space-between;
 
@@ -87,8 +87,7 @@ main {
     margin-top: 36px;
 
     & li {
-      width: 300px;
-
+      width: calc(25% - 12px)
       padding: 16px;
       background-color: white;
       border-radius: 8px;
@@ -102,14 +101,11 @@ main {
   }
 }
 
-#tasks ul li.hidden {
-  display: none;
-}
-
 .actions {
   display: flex;
   justify-content: flex-end;
   cursor: pointer;
+
 }
 
 #overlay {

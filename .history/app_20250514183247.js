@@ -16,7 +16,7 @@ const getTasks = () => {
     });
 };
 
-getTasks();
+searchTasks();
 
 const insertTask = (tasksList) => {
   if (tasksList.length > 0) {
@@ -51,9 +51,7 @@ const newTask = () => {
     .then((res) => res.json())
     .then((res) => {
       closeModal();
-      getTasks();
-      const form = document.querySelector("#createTask form");
-      form.reset();
+      searchTasks();
     });
 };
 
@@ -64,23 +62,8 @@ const deleteTask = (id) => {
     .then((res) => res.json())
     .then((res) => {
       alert("Tarefa deletada com sucesso");
-      getTasks();
+      searchTasks();
     });
 };
 
-const searchTasks = () => {
-  const lis = document.querySelectorAll("ul li");
-  if (searchBar.value.length > 0) {
-    lis.forEach((li) => {
-      if (!li.textContent.includes(searchBar.value)) {
-        li.classList.add("hidden");
-      } else {
-        li.classList.remove("hidden");
-      }
-    });
-  } else {
-    lis.forEach((li) => {
-      li.classList.remove("hidden");
-    });
-  }
-};
+const 

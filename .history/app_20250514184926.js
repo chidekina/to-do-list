@@ -52,8 +52,7 @@ const newTask = () => {
     .then((res) => {
       closeModal();
       getTasks();
-      const form = document.querySelector("#createTask form");
-      form.reset();
+      const form = document.querySelector("#creaTask form");
     });
 };
 

@@ -52,8 +52,6 @@ const newTask = () => {
     .then((res) => {
       closeModal();
       getTasks();
-      const form = document.querySelector("#createTask form");
-      form.reset();
     });
 };
 
@@ -69,18 +67,8 @@ const deleteTask = (id) => {
 };
 
 const searchTasks = () => {
-  const lis = document.querySelectorAll("ul li");
+  const li = document.quer
   if (searchBar.value.length > 0) {
-    lis.forEach((li) => {
-      if (!li.textContent.includes(searchBar.value)) {
-        li.classList.add("hidden");
-      } else {
-        li.classList.remove("hidden");
-      }
-    });
-  } else {
-    lis.forEach((li) => {
-      li.classList.remove("hidden");
-    });
+    
   }
 };

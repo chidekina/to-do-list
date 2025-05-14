@@ -52,8 +52,6 @@ const newTask = () => {
     .then((res) => {
       closeModal();
       getTasks();
-      const form = document.querySelector("#createTask form");
-      form.reset();
     });
 };
 
@@ -77,10 +75,6 @@ const searchTasks = () => {
       } else {
         li.classList.remove("hidden");
       }
-    });
-  } else {
-    lis.forEach((li) => {
-      li.classList.remove("hidden");
     });
   }
 };

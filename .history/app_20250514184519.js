@@ -52,8 +52,6 @@ const newTask = () => {
     .then((res) => {
       closeModal();
       getTasks();
-      const form = document.querySelector("#createTask form");
-      form.reset();
     });
 };
 
@@ -75,12 +73,8 @@ const searchTasks = () => {
       if (!li.textContent.includes(searchBar.value)) {
         li.classList.add("hidden");
       } else {
-        li.classList.remove("hidden");
+        li.classList.remove("hidden")
       }
-    });
-  } else {
-    lis.forEach((li) => {
-      li.classList.remove("hidden");
     });
   }
 };

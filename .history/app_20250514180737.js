@@ -8,7 +8,7 @@ const closeModal = () => {
   createTask.classList.remove("active");
 };
 
-const getTasks = () => {
+const searchTasks = () => {
   fetch("http://localhost:3000/tarefas")
     .then((res) => res.json())
     .then((res) => {
@@ -16,7 +16,7 @@ const getTasks = () => {
     });
 };
 
-getTasks();
+searchTasks();
 
 const insertTask = (tasksList) => {
   if (tasksList.length > 0) {
@@ -27,7 +27,7 @@ const insertTask = (tasksList) => {
         <h5>${task.title}</h5>
         <p>${task.description}</p>
         <div class="actions">
-          <img src="/assets/trash-alt.png" alt="Icone de um lixo" onclick="deleteTask(${task.id})" >
+        <img src="/assets/trash-alt.png" alt="Icone de um lixo" onclick=>
         </div>
     </li>
           `;
@@ -51,36 +51,11 @@ const newTask = () => {
     .then((res) => res.json())
     .then((res) => {
       closeModal();
-      getTasks();
-      const form = document.querySelector("#createTask form");
-      form.reset();
+      searchTasks();
     });
 };
 
-const deleteTask = (id) => {
-  fetch(`http://localhost:3000/tarefas/${id}`, {
-    method: "DELETE",
-  })
-    .then((res) => res.json())
-    .then((res) => {
-      alert("Tarefa deletada com sucesso");
-      getTasks();
-    });
-};
-
-const searchTasks = () => {
-  const lis = document.querySelectorAll("ul li");
-  if (searchBar.value.length > 0) {
-    lis.forEach((li) => {
-      if (!li.textContent.includes(searchBar.value)) {
-        li.classList.add("hidden");
-      } else {
-        li.classList.remove("hidden");
-      }
-    });
-  } else {
-    lis.forEach((li) => {
-      li.classList.remove("hidden");
-    });
-  }
-};
+const deleteTask = () => {
+  
+}
+ 
