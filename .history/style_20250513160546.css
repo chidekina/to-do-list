@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+#modal {
+    transform: translate(-50%, -50%);
+}
+
+#modal form label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.75px;
+}

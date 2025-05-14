@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+header {
+    padding: 16px
+}
+
+#overlay {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.active {
+    opacity: 1;
+    visibility: visible;
+}
+#modal {
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+#modal form label {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
