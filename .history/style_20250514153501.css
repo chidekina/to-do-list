@@ -1,0 +1,183 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background-color: #FFFFFF;
+}
+header {
+  padding: 32px 24px;
+  display: flex;
+  justify-content: space-between;
+  background-color: blueviolet;
+}
+
+#logo {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+
+  & h1 {
+    font-weight: bold;
+    font-size: 30px;
+    font-style: italic;
+    color: white;
+  }
+}
+
+#search-bar {
+  border-radius: 24px;
+  width: 420px;
+  height: 40px;
+  padding: 20px;
+
+  &::placeholder {
+    font-size: 16px;
+  }
+}
+
+main {
+  padding: 64px 24px;
+}
+
+#title {
+  display: flex;
+  justify-content: space-between;
+
+  & h2 {
+    font-weight: 500;
+    font-size: 40px;
+  }
+
+  & button {
+    background-color: blueviolet;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 8px 16px;
+    border-radius: 24px;
+  }
+}
+
+#tasks {
+  display: flex;
+  justify-content: center;
+
+  & h6 {
+    font-size: 32px;
+    color: #dedede;
+  }
+
+  & ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 36px;
+
+    & li {
+      width: calc(25% - 12px);
+      padding: 16px;
+    }
+  }
+}
+
+#overlay {
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #00000080;
+}
+.modal {
+  width: 400px;
+  background-color: white;
+  padding: 16px;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition-duration: 200ms;
+
+  & form {
+    display: flex;
+    flex-direction: column;
+
+    & div {
+      display: flex;
+      justify-content: space-between;
+
+      & img {
+        width: 25px;
+        height: fit-content;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+    & h3 {
+      font-weight: bold;
+      font-size: 24px;
+      color: #dedede;
+      margin-bottom: 24px;
+    }
+
+    & input {
+      width: 100%;
+      height: 32px;
+      border: 2px solid #dedede;
+      border-radius: 16px;
+      margin-bottom: 16px;
+    }
+
+    & textarea {
+      width: 100%;
+      border: 2px solid #dedede;
+      height: 128px;
+    }
+
+    & button {
+      margin-top: 12px;
+      background-color: blueviolet;
+      font-weight: 600;
+      font-size: 20px;
+      padding: 4px 16px;
+      border-radius: 24px;
+      color: white;
+    }
+  }
+}
+
+#overlay.active,
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#modal form label {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
